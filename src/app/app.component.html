@@ -3,4 +3,8 @@
 <p>{{ message }}</p>
 
 <app-navbar></app-navbar>
-<app-post [fromParent]="parentMessage"></app-post>
+<app-post
+  [fromParent]="parentMessage"
+  (childMessageEvent)="receiveMessage($event)"
+></app-post>
+<p>{{ fromChildOutput }}</p>

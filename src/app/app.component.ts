@@ -11,15 +11,23 @@ export class AppComponent implements AfterViewInit {
   parentMessage: string = 'Message changed from Parent';
   message: string = '';
   fromChildOutput: string = '';
+  bool: boolean = true;
+  userName: string = '';
+  textValue: string = 'value is coming from parent';
+
+  buttonClick() {
+    console.log('button clicked', this.bool);
+  }
+
+  onKeyup() {
+    console.log(this.textValue);
+  }
 
   @ViewChild(PostComponent) childComp: PostComponent | undefined;
 
-  constructor() {
-    console.log(this.childComp);
-  }
+  constructor() {}
 
   ngAfterViewInit(): void {
-    console.log(this.childComp);
     this.message = this.childComp!.childMessage;
   }
 

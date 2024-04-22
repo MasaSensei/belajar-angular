@@ -1,4 +1,21 @@
-<h1>Angular App</h1>
+<!-- class binding -->
+<h1 [class.text-red]="bool">Angular App</h1>
+
+<!-- style binding -->
+<h1 [style.color]="bool ? 'red' : 'green'">Style Binding</h1>
+
+<!-- event binding -->
+<button (click)="buttonClick()">Click me</button>
+
+<!-- event filtering & template variable & two way binding -->
+<!-- <input type="text" (keyup.enter)="onKeyup(username.value)" #username /> -->
+<input type="text" [(ngModel)]="userName" (keyup)="onKeyup()" />
+<br />
+
+<!-- one way and two way binding -->
+<input type="text" [value]="textValue" (keyup.enter)="onKeyup()" />
+<br />
+<input type="text" [(ngModel)]="textValue" (keyup.enter)="onKeyup()" />
 
 <p>{{ message }}</p>
 
